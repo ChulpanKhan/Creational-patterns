@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
+
 package com.mycompany.laba2.GearFactory;
 
-/**
- *
- * @author MyHuawei
- */
+import com.mycompany.laba2.Armors.Armor;
+import com.mycompany.laba2.Banners.Banner;
+import com.mycompany.laba2.Weapons.Weapon;
+
 public interface OrkGearFactory {
-    
+    Weapon createWeapon();
+    Armor createArmor();
+    Banner createBanner();
 }

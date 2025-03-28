@@ -1,13 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.laba2.GearFactory;
 
-/**
- *
- * @author MyHuawei
- */
-public class DolGuldurGearFactory {
+import com.mycompany.laba2.Armors.Armor;
+import com.mycompany.laba2.Armors.ChainMail;
+import com.mycompany.laba2.Banners.Banner;
+import com.mycompany.laba2.Banners.SpiderBanner;
+import com.mycompany.laba2.Weapons.Spear;
+import com.mycompany.laba2.Weapons.Weapon;
+
+
+public class DolGuldurGearFactory implements OrkGearFactory {
+
+    @Override
+    public Weapon createWeapon() {
+        return new Spear();
+    }
+
+    @Override
+    public Armor createArmor() {
+        return new ChainMail();
+    }
+
+    @Override
+    public Banner createBanner() {
+        return new SpiderBanner();
+    }
     
 }

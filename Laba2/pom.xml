@@ -11,4 +11,11 @@
         <maven.compiler.target>22</maven.compiler.target>
         <exec.mainClass>com.mycompany.laba2.Laba2</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+    </dependencies>
 </project>
