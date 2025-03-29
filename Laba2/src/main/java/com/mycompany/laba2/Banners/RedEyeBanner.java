@@ -10,4 +10,9 @@ package com.mycompany.laba2.Banners;
  */
 public class RedEyeBanner implements Banner {
     
+    @Override
+    public String getDescription() {
+        return "Знамя с красным оком";
+    }
+    
 }

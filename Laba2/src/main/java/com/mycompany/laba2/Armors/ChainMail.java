@@ -9,5 +9,10 @@ package com.mycompany.laba2.Armors;
  * @author MyHuawei
  */
 public class ChainMail implements Armor {
+
+    @Override
+    public String getDescription() {
+        return "Кольчуга";
+    }
     
 }

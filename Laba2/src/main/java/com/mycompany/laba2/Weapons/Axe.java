@@ -9,5 +9,10 @@ package com.mycompany.laba2.Weapons;
  * @author MyHuawei
  */
 public class Axe implements Weapon {
+        
+    @Override
+    public String getDescription() {
+        return "Топор";
+    }
     
 }

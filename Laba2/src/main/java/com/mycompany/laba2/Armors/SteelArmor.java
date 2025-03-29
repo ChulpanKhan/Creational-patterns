@@ -10,4 +10,9 @@ package com.mycompany.laba2.Armors;
  */
 public class SteelArmor implements Armor {
     
+    @Override
+    public String getDescription() {
+        return "Стальная броня";
+    }    
+    
 }

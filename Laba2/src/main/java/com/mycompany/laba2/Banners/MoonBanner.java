@@ -10,4 +10,9 @@ package com.mycompany.laba2.Banners;
  */
 public class MoonBanner implements Banner {
     
+    @Override
+    public String getDescription() {
+        return "Знамя с луной";
+    }
+    
 }
