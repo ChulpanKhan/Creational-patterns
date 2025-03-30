@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
+
 package com.mycompany.laba2;
 
-/**
- *
- * @author MyHuawei
- */
+import com.mycompany.laba2.Armors.Armor;
+import com.mycompany.laba2.Banners.Banner;
+import com.mycompany.laba2.Weapons.Weapon;
+
 public interface OrkBuilder {
-    
+    OrkBuilder setName(String name);
+    OrkBuilder setWeapon(Weapon weapon);
+    OrkBuilder setArmor(Armor armor);
+    OrkBuilder setBanner(Banner banner);
+    OrkBuilder setStrength(int strength);
+    OrkBuilder setAgility(int agility);
+    OrkBuilder setIntelligence(int intelligence);
+    OrkBuilder setHealth(int health);
+    OrkBuilder setTribe(String tribe);
+    OrkBuilder setRole(String role);
+    Ork build();
 }

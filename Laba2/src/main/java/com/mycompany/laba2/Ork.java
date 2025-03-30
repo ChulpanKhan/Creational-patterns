@@ -12,10 +12,14 @@ public class Ork {
     private int agility;
     private int intelligence;
     private int health;
+    private String tribe;
+    private String role;
     
-    public Ork(String weapon, String armor, String banner, 
-            int strength, int agility, int intelligence, int health) {
-        this.name = new Faker().lordOfTheRings().character();
+    public Ork(String name, String weapon, String armor, String banner, 
+            int strength, int agility, int intelligence, int health,
+            String tribe, String role) {
+        //this.name = new Faker().lordOfTheRings().character();
+        this.name = name;
         this.weapon = weapon;
         this.armor = armor;
         this.banner = banner;
@@ -23,5 +27,7 @@ public class Ork {
         this.agility = agility;
         this.intelligence = intelligence;
         this.health = health;
+        this.tribe = tribe;
+        this.role = role;
     }
 }
