@@ -79,7 +79,7 @@ public class OrkArmyBuilderGUI extends JFrame{
     }
     
     private void initUIComponents() {
-        //Панель армии (левая часть)
+        //панель армии (слнва)
         JPanel armyPanel = new JPanel(new BorderLayout());
         armyPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 5));
         armyPanel.setBackground(PARCHMENT);
@@ -96,21 +96,20 @@ public class OrkArmyBuilderGUI extends JFrame{
         armyPanel.add(armyTitle, BorderLayout.NORTH);
         armyPanel.add(new JScrollPane(armyTree), BorderLayout.CENTER);
         
-        //Панель информации (центральная часть)
+        //панель информации (справа в центрк)
         infoPanel = new JPanel();
         infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS));
         infoPanel.setBorder(BorderFactory.createEmptyBorder(10, 5, 10, 10));
         infoPanel.setBackground(PARCHMENT);
         
-        //Панель управления (нижняя часть)
+        //панель управления (снизу) 
         JPanel controlPanel = new JPanel(new GridLayout(1, 3, 15, 0));
         controlPanel.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createMatteBorder(2, 0, 0, 0, ANCIENT_GOLD),
             BorderFactory.createEmptyBorder(15, 15, 15, 15)
         ));
         controlPanel.setBackground(DARK_BROWN);
-        
-        // Компоненты управления
+
         JComboBox<String> tribeCombo = createStyledComboBox(new String[]{"Мордор", "Дол Гулдур", "Мглистые Горы"});
         JComboBox<String> roleCombo = createStyledComboBox(new String[]{"Базовый", "Командир", "Разведчик"});
         JButton createButton = createStyledButton("Призвать Орка");
@@ -131,21 +130,18 @@ public class OrkArmyBuilderGUI extends JFrame{
         controlPanel.add(roleCombo);
         controlPanel.add(createButton);
         
-        // Добавление компонентов в главное окно
         add(armyPanel, BorderLayout.WEST);
         add(new JScrollPane(infoPanel), BorderLayout.CENTER);
         add(controlPanel, BorderLayout.SOUTH);
         
         WelcomeMessageGUI.showWelcomeMessage(infoPanel, palatino, DARK_BROWN);
-        // Обработчик выбора в дереве
         armyTree.addTreeSelectionListener(e -> updateInfoPanel());
     }
     private void styleTree(JTree tree) {
         tree.setFont(palatino);
         tree.setBackground(PARCHMENT);
         tree.setRowHeight(25);
-        
-        // Кастомный рендерер для узлов дерева
+
         tree.setCellRenderer(new DefaultTreeCellRenderer() {
             @Override
             public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, 
@@ -242,7 +238,7 @@ public class OrkArmyBuilderGUI extends JFrame{
         
         TreePath selectedPath = armyTree.getSelectionPath();
         if (selectedPath == null) {
-            // Больше не показываем welcomeMessage при снятии выбора
+            WelcomeMessageGUI.showWelcomeMessage(infoPanel, palatino, DARK_BROWN);
             infoPanel.revalidate();
             infoPanel.repaint();
             return;
@@ -259,7 +255,7 @@ public class OrkArmyBuilderGUI extends JFrame{
     }
     
     private void createOrkInfoCard(Ork ork) {
-        // Основная карточка
+        //карточка
         JPanel card = new JPanel();
         card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
         card.setBorder(BorderFactory.createCompoundBorder(
@@ -269,30 +265,28 @@ public class OrkArmyBuilderGUI extends JFrame{
         card.setBackground(PARCHMENT);
         card.setAlignmentX(Component.LEFT_ALIGNMENT);
         
-        // Заголовок с именем
+        //заголовок с именем
         JLabel nameLabel = new JLabel(ork.getName());
         nameLabel.setFont(palatinoLarge);
         nameLabel.setForeground(BLOOD_RED);
         nameLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         
-        // Подзаголовок с племенем и ролью
+        //подзаголовок с племенем и ролью
         JLabel tribeRoleLabel = new JLabel(ork.getTribe() + " • " + ork.getRole());
         tribeRoleLabel.setFont(palatinoBold);
         tribeRoleLabel.setForeground(DARK_BROWN);
         tribeRoleLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         
-        // Разделитель
+        //разделитель
         JSeparator separator = new JSeparator(SwingConstants.HORIZONTAL);
         separator.setForeground(ANCIENT_GOLD);
         separator.setAlignmentX(Component.LEFT_ALIGNMENT);
         
-        // Панель характеристик
-        JPanel statsPanel = createStatsPanel(ork);
-        
-        // Панель снаряжения
+        //панели характеристик и снаряжения
+        JPanel statsPanel = createStatsPanel(ork);       
         JPanel equipmentPanel = createEquipmentPanel(ork);
         
-        // Сборка карточки
+        //сборка карточки
         card.add(nameLabel);
         card.add(Box.createRigidArea(new Dimension(0, 5)));
         card.add(tribeRoleLabel);

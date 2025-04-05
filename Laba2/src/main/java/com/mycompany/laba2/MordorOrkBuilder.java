@@ -21,7 +21,7 @@ public class MordorOrkBuilder extends OrkBuilder {
             this.banner = gearFactory.createBanner();
         }
         this.tribe = "Мордор";
-        this.strength = (int)(30 + random.nextInt(71) * 1.3); // +30% к силе
+        this.strength = (int)(40 + random.nextInt(71));
         this.agility = 10 + random.nextInt(91);
         this.intelligence = 1 + random.nextInt(50);
         this.health = 50 + random.nextInt(151);
