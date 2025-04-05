@@ -21,7 +21,7 @@ public class MistyMountainsOrkBuilder extends OrkBuilder {
         }
         this.tribe = "Мглистые горы";
         this.strength = 30 + random.nextInt(71);
-        this.agility = (int)(10 + random.nextInt(91));
+        this.agility = 60 + random.nextInt(41);
         this.intelligence = 1 + random.nextInt(30);
         this.health = 50 + random.nextInt(151);
         

@@ -21,7 +21,7 @@ public class DolGuldurOrkBuilder extends OrkBuilder {
         }
         this.tribe = "Дол Гурдур";
         this.strength = 30 + random.nextInt(71);
-        this.agility = 10 + random.nextInt(71);
+        this.agility = 30 + random.nextInt(71);
         this.intelligence = 1 + random.nextInt(50);
         this.health = 50 + random.nextInt(151);
         
