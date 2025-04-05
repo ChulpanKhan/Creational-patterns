@@ -237,18 +237,18 @@ public class OrkArmyBuilderGUI extends JFrame{
         infoPanel.removeAll();
         
         TreePath selectedPath = armyTree.getSelectionPath();
-        if (selectedPath == null) {
-            WelcomeMessageGUI.showWelcomeMessage(infoPanel, palatino, DARK_BROWN);
-            infoPanel.revalidate();
-            infoPanel.repaint();
-            return;
-        }
         
         Object selected = ((DefaultMutableTreeNode) selectedPath.getLastPathComponent()).getUserObject();
         
         if (selected instanceof Ork ork) {
             createOrkInfoCard(ork);
-        }         
+        }  
+        else {
+            WelcomeMessageGUI.showWelcomeMessage(infoPanel, palatino, DARK_BROWN);
+            infoPanel.revalidate();
+            infoPanel.repaint();
+            return;
+        }
         infoPanel.revalidate();
         infoPanel.repaint();
     
