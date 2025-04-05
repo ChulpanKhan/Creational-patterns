@@ -44,4 +44,9 @@ public class Ork {
     public int getHealth() { return health; }
     public String getTribe() { return tribe; }
     public String getRole() { return role; }
+    
+    @Override
+    public String toString() {
+        return name;
+    }
 }

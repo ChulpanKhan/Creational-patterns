@@ -24,6 +24,7 @@ public abstract class OrkBuilder {
     protected final OrkGearFactory gearFactory; 
     
     public OrkBuilder(OrkGearFactory gearFactory) {
+        this.name = faker.lordOfTheRings().character();
         this.gearFactory = gearFactory;
     }
     
@@ -37,7 +38,7 @@ public abstract class OrkBuilder {
         return this;
     }
 
-        public OrkBuilder setWeapon(Weapon weapon) {
+    public OrkBuilder setWeapon(Weapon weapon) {
         this.weapon = weapon;
         return this;
     }

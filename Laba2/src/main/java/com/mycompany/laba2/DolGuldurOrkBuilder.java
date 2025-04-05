@@ -12,9 +12,13 @@ public class DolGuldurOrkBuilder extends OrkBuilder {
 
     @Override
     public Ork build() {
-        this.weapon = gearFactory.createWeapon();
+        if (this.weapon == null) {
+            this.weapon = gearFactory.createWeapon();
+        }
         this.armor = gearFactory.createArmor();
-        this.banner = gearFactory.createBanner();
+        if (this.banner == null) {
+            this.banner = gearFactory.createBanner();
+        }
         this.tribe = "Дол Гурдур";
         this.strength = 30 + random.nextInt(71);
         this.agility = 30 + random.nextInt(71);

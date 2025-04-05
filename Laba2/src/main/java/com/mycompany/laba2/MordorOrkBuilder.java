@@ -13,9 +13,13 @@ public class MordorOrkBuilder extends OrkBuilder {
 
     @Override
     public Ork build() {
-        this.weapon = gearFactory.createWeapon();
+        if (this.weapon == null) {
+            this.weapon = gearFactory.createWeapon();
+        }
         this.armor = gearFactory.createArmor();
-        this.banner = gearFactory.createBanner();
+        if (this.banner == null) {
+            this.banner = gearFactory.createBanner();
+        }
         this.tribe = "Мордор";
         this.strength = (int)(30 + random.nextInt(71) * 1.3); // +30% к силе
         this.agility = 10 + random.nextInt(91);

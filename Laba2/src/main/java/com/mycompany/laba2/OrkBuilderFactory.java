@@ -4,16 +4,16 @@ package com.mycompany.laba2;
 public class OrkBuilderFactory {
     public OrkBuilder createOrkBuilder(String tribe) {
         switch (tribe) {
-            case "Mordor" -> {
+            case "Мордор" -> {
                 return new MordorOrkBuilder();
             }
-            case "Dol Guldur" -> {
+            case "Дол Гулдур" -> {
                 return new DolGuldurOrkBuilder();
             }
-            case "Misty Mountains" -> {
+            case "Мглистые Горы" -> {
                 return new MistyMountainsOrkBuilder();
             }
-            default -> throw new IllegalArgumentException("Unknown tribe: " + tribe);
+            default -> throw new IllegalArgumentException("Такого племени нет");
         }
     }
 }
