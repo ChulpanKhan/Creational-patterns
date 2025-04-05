@@ -34,13 +34,11 @@ import javax.swing.tree.TreePath;
 
 public class OrkArmyBuilderGUI extends JFrame{
     
-    // Цветовая схема в стиле средневековья
     private static final Color PARCHMENT = new Color(248, 240, 227);
     private static final Color DARK_BROWN = new Color(61, 43, 31);
     private static final Color BLOOD_RED = new Color(139, 0, 0);
     private static final Color ANCIENT_GOLD = new Color(212, 175, 55);
     
-    // Шрифты Palatino Linotype с fallback
     private Font palatino;
     private Font palatinoBold;
     private Font palatinoLarge;
@@ -58,7 +56,6 @@ public class OrkArmyBuilderGUI extends JFrame{
     }
     
     private void setupFonts() {
-        // Основной шрифт с fallback
         palatino = createFont("Palatino Linotype", Font.PLAIN, 16);
         palatinoBold = palatino.deriveFont(Font.BOLD, 16);
         palatinoLarge = palatino.deriveFont(Font.BOLD, 24);
@@ -67,7 +64,7 @@ public class OrkArmyBuilderGUI extends JFrame{
     private Font createFont(String preferredName, int style, int size) {
         Font font = new Font(preferredName, style, size);
         if (!font.getFamily().equals(preferredName)) {
-            font = new Font("Serif", style, size); // Fallback
+            font = new Font("Serif", style, size); // если чтото пошло не так со шрифтом
         }
         return font;
     }
