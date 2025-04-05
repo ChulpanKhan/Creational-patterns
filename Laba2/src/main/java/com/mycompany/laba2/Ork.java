@@ -34,16 +34,36 @@ public class Ork {
         this.role = role;
     }
     
-    public String getName() { return name; }
-    public Weapon getWeapon() { return weapon; }
-    public Armor getArmor() { return armor; }
-    public Banner getBanner() { return banner; }
-    public int getStrength() { return strength; }
-    public int getAgility() { return agility; }
-    public int getIntelligence() { return intelligence; }
-    public int getHealth() { return health; }
-    public String getTribe() { return tribe; }
-    public String getRole() { return role; }
+    public String getName() { 
+        return name; 
+    }
+    public Weapon getWeapon() { 
+        return weapon; 
+    }
+    public Armor getArmor() { 
+        return armor; 
+    }
+    public Banner getBanner() { 
+        return banner; 
+    }
+    public int getStrength() { 
+        return strength; 
+    }
+    public int getAgility() { 
+        return agility; 
+    }
+    public int getIntelligence() { 
+        return intelligence; 
+    }
+    public int getHealth() { 
+        return health; 
+    }
+    public String getTribe() { 
+        return tribe; 
+    }
+    public String getRole() { 
+        return role; 
+    }
     
     @Override
     public String toString() {
